@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
+import UseEffectHook from "./components/useeffecthook";
 //import Navbar from './components/Navbar';
-import "./components/Navbar.css";
-import "./components/Product.css";
-import Addproduct from "./expense-tracker/components/Addproduct";
-import ExpenseFilter from "./expense-tracker/components/ExpenseFilter";
-import ExpenseList from "./expense-tracker/components/ExpenseList";
+// import "./components/Navbar.css";
+// import "./components/Product.css";
+// import Addproduct from "./expense-tracker/components/Addproduct";
+// import ExpenseFilter from "./expense-tracker/components/ExpenseFilter";
+// import ExpenseList from "./expense-tracker/components/ExpenseList";
 //import styled from 'styled-components';
 //import Product from './components/Product';
 //import Expandable from './components/Expandable';
@@ -24,13 +25,13 @@ import ExpenseList from "./expense-tracker/components/ExpenseList";
 // `
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [expenses, setExpenses] = useState([
-    { id: 1, description: "aaa", amount: 10, category: "Utilities" },
-    { id: 2, description: "bbb", amount: 10, category: "Utilities" },
-    { id: 3, description: "ccc", amount: 10, category: "Utilities" },
-    { id: 4, description: "ddd", amount: 10, category: "Utilities" },
-  ]);
+  // const [selectedCategory, setSelectedCategory] = useState("");
+  // const [expenses, setExpenses] = useState([
+  //   { id: 1, description: "aaa", amount: 10, category: "Utilities" },
+  //   { id: 2, description: "bbb", amount: 10, category: "Utilities" },
+  //   { id: 3, description: "ccc", amount: 10, category: "Utilities" },
+  //   { id: 4, description: "ddd", amount: 10, category: "Utilities" },
+  // ]);
   // const [productCount , setProductCount] = useState<number>(0);
   // const text = `Paris (French pronunciation: ⓘ) is the capital and most populous city of France. With an official estimated population of 2,102,650 residents as of 1 January 2023
   //               [2] in an area of more than 105 km2 (41 sq mi),[5] Paris is the fourth-most populated city in the European Union and the 30th most densely populated city in the world in
@@ -46,9 +47,9 @@ function App() {
   //       setProductCount(productCount-1)
   //   }
 
-  const visibleExpenses = selectedCategory
-    ? expenses.filter(e => e.category === selectedCategory)
-    : expenses;
+  // const visibleExpenses = selectedCategory
+  //   ? expenses.filter(e => e.category === selectedCategory)
+  //   : expenses;
 
   return (
     <React.Fragment>
@@ -62,7 +63,7 @@ function App() {
       {/* <Form/> */}
       {/* <Reactformhook/> */}
       {/* <FormValidationwwithzod/> */}
-      <Addproduct  onSubmit={expense => setExpenses([...expenses ,{...expense , id: expenses.length + 1}])}/>
+      {/* <Addproduct  onSubmit={expense => setExpenses([...expenses ,{...expense , id: expenses.length + 1}])}/>
       <div className="mb-3">
         <ExpenseFilter
           onSelectCategory={(category) => setSelectedCategory(category)}
@@ -71,7 +72,8 @@ function App() {
       <ExpenseList
         expenses={visibleExpenses}
         onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
-      />
+      /> */}
+      <UseEffectHook/>
     </React.Fragment>
   );
 }
